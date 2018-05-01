@@ -7,7 +7,7 @@ class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=250)
     text = models.TextField()
-    create_date = models.DateTimeField(default=timezone.now())
+    create_date = models.DateTimeField(default=timezone.now)
     publish_date = models.DateTimeField(blank=True, null=True)
 
     def publish(self):
@@ -18,7 +18,7 @@ class Post(models.Model):
         return self.comments.filter(approved_comments=True)
 
     def get_absolute_url(self):
-        return reverse('postdetail', kwargs={'pk': self.pk})
+        return reverse('post_detail', kwargs={'pk': self.pk})
 
     def __str__(self):
         return self.title

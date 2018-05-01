@@ -10,7 +10,7 @@ class PostForm(forms.ModelForm):
 
         widgets = {
             'title': forms.TextInput(attrs={'class': "textinputclass"}),
-            'text': forms.Textarea(attrs={'class': 'edittextarea'}),
+            'text': forms.Textarea(attrs={'class': 'editable medium-editor-textarea postcontent'}),
 
         }
 
@@ -22,6 +22,6 @@ class CommentForm(forms.ModelForm):
         fields = ('author', 'text')
 
         widgets = {
-            'author': forms.TextInput(attrs={'class': 'author style'}),
-            'text': forms.Textarea(attrs={'class': 'comments style'})
+            'author': forms.TextInput(attrs={'class': 'textinputclass'}),
+            'text': forms.Textarea(attrs={'class': 'editable medium-editor-textarea'})
         }
